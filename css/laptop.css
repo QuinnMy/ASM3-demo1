@@ -1,0 +1,337 @@
+* {
+  margin: 0px;
+}
+.bg-grey {
+  background: #f7f7f7;
+}
+section > .container {
+  width: 1170px;
+  margin: auto;
+  display: block;
+  padding: 30px 50px;
+}
+#nav-bar {
+  text-align: center;
+}
+
+/* 1. Xây dựng phần ảnh Banner */
+#banner {
+  position: relative;
+  text-align: center;
+}
+.tencanhan1 {
+  position: absolute; /* vị trí tuyệt đối cho tencanhan1 trong #banner */
+  top: 35%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* t.tính chuyển đổi để cho khối di chuyển dọc trục x-y theo tỉ lệ âm */
+  color: rgb(192, 229, 196);
+}
+#banner img {
+  /* width: 100%;
+  height: 400px; giữ nguyên chiều ngang và cắt bớt chiều dọc
+  object-fit: none;
+  object-position: 0 0; mặc định cắt center nên cần thêm obj-pos left-top */
+  filter: brightness(50%); /*làm tối ảnh*/
+}
+
+/* 2. Xây dựng Navbar*/
+#nav-bar a {
+  text-transform: uppercase; /*in hoa*/
+  text-decoration: none; /*bỏ gạch dưới cho link */
+  border-left: 1px solid #d1cdcd;
+  border-right: 1px solid #d1cdcd;
+  font-size: 12px;
+  padding: 20px 25px;
+  color: #4e0808;
+}
+#nav-bar .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /*tương đối để sau đó ảnh đè lên các phần khác*/
+  padding: 0 50px;
+}
+/* .tencanhan2 {
+  padding: 0 100px;
+} */
+#nav-bar div {
+  padding: 0px 100px;
+}
+#nav-bar i {
+  color: rgb(0, 17, 255);
+}
+
+/* 3. Xây dựng Thông tin cá nhân*/
+#about .container {
+  display: flex;
+  width: 100%;
+  padding: 0 0;
+} /*phần dưới là chỉnh kiểu thêm cho phần 3*/
+#target {
+  background-color: #e6e1e1;
+}
+#personal-info {
+  background-color: #d5d1d1;
+}
+#target,
+#personal-info {
+  padding: 60px 50px 60px 80px;
+}
+#target div,
+.mt-40 {
+  padding-top: 30px;
+  color: #5e5b5b;
+  padding-inline-start: 0;
+}
+.mt-40 span {
+  font-weight: bold;
+}
+.mt-40 li {
+  padding-bottom: 10px;
+  list-style: none;
+}
+#about {
+  padding: 0 50px;
+}
+.ketnoi i {
+  padding-right: 8px;
+  color: rgb(0, 17, 255);
+}
+.an-info {
+  /* ASM3-9. b2 ẩn thông tin cá nhân ->b3 thêm phần nhập mail tại HTML */
+  display: none;
+}
+.hidden {
+  /* ASM3-9 dùng để thêm lớp ẩn*/
+  display: none;
+}
+.canhbao {
+  /* ASM3-9 lớp hiệu ứng cảnh báo */
+  font-size: 18px;
+  color: #a51010;
+}
+
+/* 4. Xây dựng phần Thông tin nghề nghiệp*/
+#job-info .container {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 30px; */
+  display: flex; /*ASM3-5. Phần Thông tin nghề nghiệp: điều chỉnh chia cột */
+  width: 100%;
+}
+.nd {
+  display: grid;
+  grid-template-columns: 75% 25%; /*chia gridlayout 3 phần 75%-25%cho nhóm thông tin chính*/
+  grid-template-rows: 100px auto;
+  border: 1px solid #e0dbdb;
+  align-items: center;
+}
+.nd .chitiet {
+  grid-column: 1/-1; /* cho griditem chitiet trải rộng 2 cột */
+  color: #5e5b5b;
+  padding: 0 30px;
+}
+.nd i {
+  font-size: 35px;
+  color: #c1bdbd;
+}
+/* .nd h1 {
+  text-align: center;
+} */
+.ct {
+  padding-bottom: 50px;
+}
+.hv .chitiet,
+.hd .chitiet,
+.st .chitiet,
+.nn .chitiet,
+.skill .chitiet {
+  align-self: start;
+}
+/* ASM3-10 ẩn phần thông tin nghề nghiệp */
+.chitiet,
+.view-more,
+.view-less {
+  display: none;
+}
+
+/*đoạn dưới này dành cho riêng kinh nghiệm-học vấn-hoạt động*/
+.ct div:first-child {
+  font-weight: bold;
+}
+.ct div:nth-child(2) {
+  font-style: italic;
+}
+.chinh {
+  position: relative;
+}
+.chinh:before {
+  content: "";
+  background-color: rgb(0, 17, 255);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  left: -15px;
+  top: 8px;
+}
+.nut {
+  padding: 0 5px;
+  background-color: rgb(0, 17, 255);
+  color: #f7f7f7;
+  border-radius: 8px; /*.nut này ở phần học vấn*/
+}
+
+/*5. Xây dựng phần Sở thích*/
+.sothich {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.sothich div {
+  text-align: center;
+}
+.sothich i {
+  font-size: 20px;
+  border: 2px solid #3478ca;
+  padding: 10px;
+  border-radius: 10% 50%; /* taọ bo tròn quanh icon */
+}
+
+/* 6. Xây dựng phần "Ngôn Ngữ", "Kỹ Năng"*/
+.nn span,
+.skill span {
+  width: 45px;
+  height: 3px;
+  background-color: #e3dcdc; /*thêm màu, rộng dài cho các span*/
+  display: inline-block;
+  margin-right: 10px;
+}
+.lkh span,
+.lvn span {
+  background-color: rgb(57, 28, 159);
+}
+#coban {
+  background-color: rgb(57, 28, 159);
+}
+.anh #nangcao,
+.xldb #nangcao {
+  background-color: rgb(57, 28, 159);
+} /* chọn màu riêng cho ngôn ngữ/skill đè lên màu xám */
+
+/* 7. Xây dựng phần Chứng chỉ - Giải thưởng */
+/* .chungchi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
+.cer {
+  /* display: flex; */
+  /* gap: 20px; */
+  padding: 30px;
+  color: #5e5b5b;
+}
+.c1,
+.c2 {
+  border-bottom: 1px solid #d6c08d;
+}
+.c2 div {
+  position: relative;
+}
+.c2 div:before {
+  content: "";
+  background-color: #d6c08d;
+  width: 1px;
+  position: absolute;
+  left: -30px;
+  top: 0px;
+  bottom: 0px;
+}
+/* .c2 div {
+  border-left: 1px solid #d6c08d;
+} */
+h4 {
+  padding-bottom: 15px;
+}
+
+/* 8. Xây dựng phần Dự án */
+/*.cacduan {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 30px 20px 0;
+}*/
+.da {
+  border: 1px solid #e0dbdb;
+  color: #5e5b5b;
+  padding: 20px 0;
+}
+.tenduan {
+  padding: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #e0dbdb;
+  border-top: 1px solid #e0dbdb;
+}
+.da img {
+  width: 100%; /*B26 vì ảnh rất lớn, nó sẽ tràn khỏi item nên giới hạn nó = width của item */
+}
+td {
+  border-top: 1px solid #c1bdbd; /* bảng chỉ chứa đường kẻ ngang */
+  padding: 8px 6px;
+}
+td:first-child {
+  width: 30%; /* tăng chiều rộng cột 1 của bảng */
+  vertical-align: top; /*canh lề theo chiều dọc cho văn bản*/
+}
+/* .donvi {
+  display: flex;
+  gap: 20px;
+  padding: 18px 20px;
+} */
+.donvi div:first-child {
+  display: inline-block;
+  background-color: rgb(0, 17, 255);
+  color: #f7f7f7;
+  border-radius: 30%;
+  padding: 3px 5px;
+}
+
+/* 9. Xây dựng phần Liên hệ */
+
+.chantrang li {
+  display: inline-block;
+  padding: 0 10px;
+  /* width: 100%; */
+}
+.chantrang a {
+  text-decoration: none;
+  color: #5e5b5b;
+  font-size: 23px;
+}
+.chantrang i {
+  font-size: 25px;
+  background-color: rgb(0, 17, 255);
+  color: #e6e1e1;
+  border-radius: 45%;
+}
+.chantrang ul {
+  padding-inline-start: 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+footer {
+  padding: 50px 50px;
+}
+/* 10. Thay đổi thông tin cá nhân */
+/* 11. (Nâng cao) Bổ sung ảnh cá nhân */
+.nav-anh {
+  width: 13%;
+  border: 12px solid #f7f7f7;
+  border-radius: 50%;
+  position: absolute; /* để ảnh đè lên các thành phần khác */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

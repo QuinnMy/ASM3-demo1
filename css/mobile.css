@@ -1,0 +1,42 @@
+/* ASM3-2. Chia file CSS cho từng màn hình
+chọn 576px cho chiều rộng lớn nhất của mobile, đổi màu body sang xanh lá */
+@media screen and (max-width: 576px) {
+  body {
+    background-color: rgb(194, 230, 180);
+  }
+
+  /* ASM3-3.Phần Navbar item được dàn xuống theo chiều dọc */
+  #nav-bar .container,
+  #nav-bar a {
+    display: block; /*đề y/c không dùng lệnh đổ dọc trong flex */
+    width: 100%; /*ghi đè 1 width cũ section .container */
+  }
+  #nav-bar a {
+    text-align: left;
+  }
+
+  /* ASM3-4.Phần Thông tin cá nhân: chỉnh trực tiếp trên HTML, thêm .row, .col-12 .col-sm-6 ngay tại Breakpoint là 576px */
+  /* ASM3-6. Phần Chứng chỉ - Giải thưởng: tương tự chia layout tại HTML .chungchi */
+  #certificate .container {
+    width: 100%;
+  }
+  .cer {
+    /*chỉnh border cuối mỗi chứng chỉ */
+    border-bottom: 1px solid #d6c08d;
+  }
+  .c2 div:before {
+    display: none;
+  }
+  /* ASM3-7 Phần dự án */
+  #project .container {
+    width: 100%;
+  }
+  /* ASM3-8. Phần Footer: */
+  .chantrang i,
+  .chantrang a {
+    font-size: 63%;
+  }
+  .tencanhan1 {
+    font-size: 50%;
+  }
+}
